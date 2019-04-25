@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+			var arr1 = [1, 2, 3, 2, 2, 3, 4, 5, 6, 76, 21, 3, 2, 34, 345, 34123, 23, 4, 6, 7, 8, 45]
+			var mapArr = arr.map(function(item, idx, oldArr) {
+				return item + 10;
+			});
+				
+			// 数组去重
+			var filterArr = arr1.filter((item, idx, protoArr) => {
+				return arr1.indexOf(item) === idx;
+			});
+			// 获取大于某一个数值的数组
+			var filterArr1 = arr1.filter((item, idx, protoArr) => {
+				if(item % 2 !== 0){
+					return true;
+				} else {
+					return false;
+				}
+			});
+			
+			var reduceArr = arr1.reduce((last, item, idx, protoArr)=>{
+				return last+=item;
+			}, 0)
+			
+			var findArr = arr.find((item, ind, protoArr)=>{
+				return item > 5;
+			})
+			console.log(findArr);
+		</script>
+	</body>
+
+</html>

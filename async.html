@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			async function asyncFunction(num){
+				if(num===1){
+					return 'number == 1'
+				}else {
+					return Promise.reject('number !===1')
+				}
+			}
+			
+			asyncFunction(2).then(function(result){
+				console.log(result)
+			}).catch(function(err){
+				console.log(err)
+			})
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function* status() {
+				yield (function(){
+					setTimeout(() => {
+						console.log('11111')
+					}, 1000)
+				})()
+				yield (()=>{
+					setTimeout(() => {
+						console.log('22222')
+					}, 500)
+				})();
+				return 'end';
+			}
+
+			var closer = status();
+			
+			closer.next()
+			closer.next()
+			closer.next()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function a(){
+				setTimeout(()=>{
+					console.log('aaaa')
+				},0)
+			}
+			function b(){
+				console.log('bbbb')
+			}
+			function c(){
+				console.log('cccc')
+			}
+			Promise.resolve(a())
+				   .then(b())
+				   .then(c())
+				   .then(()=>{
+				   	console.log('done')
+				   })
+		</script>
+	</body>
+</html>
