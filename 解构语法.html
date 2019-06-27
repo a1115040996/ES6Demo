@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const res = {
+			    code: 'success',
+			    data: {
+			        order: '123456',
+			        insCode: 'PICC',
+			        users: [
+			            {
+			                name: 'zhangsan',
+			                role: '1'
+			            },
+			            {
+			                name: 'lisi',
+			                role: '2'
+			            },
+			            {
+			                name: 'wangwu',
+			                role: '3'
+			            }
+			        ]
+			    }
+			}
+			
+			let sendMsg = {
+			    orderNumber: '',
+			    companyCode: '',
+			    code: ''
+			};
+			
+			({
+			    code: sendMsg.code, 
+			    data: {
+			            order: sendMsg.orderNumber,
+			            insCode: sendMsg.companyCode
+			          }
+			} = res);
+			console.log(sendMsg);
+		</script>
+	</body>
+</html>
